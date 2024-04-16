@@ -1,16 +1,17 @@
 # Create/Verify hashes for a set of files
 
-This utility computes hashes for all files in its current directory and  recursively does the same for all subdirectories. It will either:
+This utility computes hashes for all files in its current directory and  recursively does the same for its subdirectories. It will either:
 - Create a "catalog" containing a hash and its corresponding filename for each file;
 - Verify the hashes of all files in its current directory and identifies missing, new, and/or modified files.
 
-The "catalog" is created in the directory containing the script. The intent is to distribute both files with whatever content is in this directory. No presumption is made regarding this content.
+The "catalog" is created in the directory containing the script. The intent is to distribute both the script and the "catalog" with whatever content is in this directory. No presumption is made regarding this content.
 
-The script can be invoked with a right-click "Run with PowerShell". If the default "catalog" exists, the script prompts the user for the known signature. If none is provided, it will display the hash of the "catalog" and the user can copy/compare this value with the source of the files. In any case, the script pauses at the end to let the user review itsoutput.
+The script can be invoked with a right-click "Run with PowerShell". If the default "catalog" exists, the script prompts the user for the known signature. If none is provided, it will display the hash of the "catalog" and the user can copy/compare this value with the source of the files. In any case, the script pauses at the end to let the user review its output.
 
 ### Usage:
+Where ...\ is the directory containing the files to hash:
 ````
-DoHashes [-Algorithm xxx] [-CatalogName <filename>] <-KnownSignature <hash>]
+...\DoHashes [-Algorithm xxx] [-CatalogName <filename>] <-KnownSignature <hash>]
 ````
 Where:
 - -Algorithm is the desired cryptographic hash function to use for computing the hash value of the files. Default is *SHA256*.
@@ -28,7 +29,7 @@ Done.
 Press enter to continue ...:
 ````
 
-The hash value of the catalog cannot be recursively shown here. You can find it *[here](https://github.com/SergeCaron/DoHashes/blob/d5b1ef777fb55d4486e8000f4b4cfd9ec8200a78/Resources/KnownSignature.txt)*.
+The hash value of the catalog cannot be shown here: by definition, this would change the hash of this ReadMe. You can find it *[here](https://github.com/SergeCaron/DoHashes/blob/d5b1ef777fb55d4486e8000f4b4cfd9ec8200a78/Resources/KnownSignature.txt)*.
 
 The same goes for the hash values of the files which you can find *[here](https://github.com/SergeCaron/DoHashes/blob/b1f5c8df57e40f5f2724a53be4a5f319f5faad8f/Resources/Hashes.txt)*.
 
